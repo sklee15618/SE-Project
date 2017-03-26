@@ -47,7 +47,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateWaiver = new System.Windows.Forms.DateTimePicker();
             this.TimeArrivedLabel = new System.Windows.Forms.Label();
-            this.TimeArr_txt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.currentTime = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,7 +170,7 @@
             // 
             // TimeLeft_txt
             // 
-            this.TimeLeft_txt.Location = new System.Drawing.Point(874, 421);
+            this.TimeLeft_txt.Location = new System.Drawing.Point(782, 493);
             this.TimeLeft_txt.Name = "TimeLeft_txt";
             this.TimeLeft_txt.Size = new System.Drawing.Size(121, 22);
             this.TimeLeft_txt.TabIndex = 15;
@@ -176,7 +178,7 @@
             // TimeLeftLabel
             // 
             this.TimeLeftLabel.AutoSize = true;
-            this.TimeLeftLabel.Location = new System.Drawing.Point(871, 379);
+            this.TimeLeftLabel.Location = new System.Drawing.Point(779, 460);
             this.TimeLeftLabel.Name = "TimeLeftLabel";
             this.TimeLeftLabel.Size = new System.Drawing.Size(67, 17);
             this.TimeLeftLabel.TabIndex = 16;
@@ -195,6 +197,7 @@
             // dateWaiver
             // 
             this.dateWaiver.CustomFormat = "yyyy-MM-dd";
+            this.dateWaiver.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateWaiver.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.dateWaiver.Location = new System.Drawing.Point(579, 421);
             this.dateWaiver.Name = "dateWaiver";
@@ -205,25 +208,48 @@
             // TimeArrivedLabel
             // 
             this.TimeArrivedLabel.AutoSize = true;
-            this.TimeArrivedLabel.Location = new System.Drawing.Point(761, 379);
+            this.TimeArrivedLabel.Location = new System.Drawing.Point(779, 379);
             this.TimeArrivedLabel.Name = "TimeArrivedLabel";
             this.TimeArrivedLabel.Size = new System.Drawing.Size(88, 17);
             this.TimeArrivedLabel.TabIndex = 19;
             this.TimeArrivedLabel.Text = "Time Arrived";
             // 
-            // TimeArr_txt
+            // label1
             // 
-            this.TimeArr_txt.Location = new System.Drawing.Point(764, 421);
-            this.TimeArr_txt.Name = "TimeArr_txt";
-            this.TimeArr_txt.Size = new System.Drawing.Size(104, 22);
-            this.TimeArr_txt.TabIndex = 20;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 17);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "label2";
+            // 
+            // currentTime
+            // 
+            this.currentTime.AutoSize = true;
+            this.currentTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentTime.Location = new System.Drawing.Point(777, 417);
+            this.currentTime.Name = "currentTime";
+            this.currentTime.Size = new System.Drawing.Size(64, 25);
+            this.currentTime.TabIndex = 25;
+            this.currentTime.Text = "label4";
             // 
             // paperlessWaiver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 710);
-            this.Controls.Add(this.TimeArr_txt);
+            this.Controls.Add(this.currentTime);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.TimeArrivedLabel);
             this.Controls.Add(this.dateWaiver);
             this.Controls.Add(this.pictureBox1);
@@ -244,6 +270,7 @@
             this.Controls.Add(this.PaperlessWaiverLabel);
             this.Name = "paperlessWaiver";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.paperlessWaiver_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,6 +296,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dateWaiver;
         private System.Windows.Forms.Label TimeArrivedLabel;
-        private System.Windows.Forms.TextBox TimeArr_txt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label currentTime;
     }
 }

@@ -133,9 +133,21 @@ namespace FinalSprintProject
         }
 
         //Paperless Waiver statement
-        public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string DateTimeArr_txt, string TimeLeft_txt)
+
+
+        public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string currentTime, string TimeArr_txt, string TimeLeft_txt)
+
+        //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
+
+
+
+
         {
-            string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,datetimeArr,timeLeft) VALUES ('"+ PrintName_txt + "','"+ SignName_txt + "','"+ MemType_txt + "','"+ Gender_txt + "','"+ DateTimeArr_txt + "','"+ TimeLeft_txt + "')";
+
+            //string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('" + PrintName_txt + "','" + SignName_txt + "','" + MemType_txt + "','" + Gender_txt + "', '" + TestDate_txt + "' , '" + TimeArr_txt + "','" + TimeLeft_txt + "')";
+
+            string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('"+ PrintName_txt + "','"+ SignName_txt + "','"+ MemType_txt + "','"+ Gender_txt + "', '" + currentTime + "' , '"+ TimeArr_txt + "','"+ TimeLeft_txt + "')";
+
             //VALUES()
 
             //open connection
@@ -148,7 +160,7 @@ namespace FinalSprintProject
                 cmd.ExecuteNonQuery();
 
                 //close connection
-                // this.CloseConnection();
+                this.CloseConnection();
             }
         }
 
@@ -264,7 +276,7 @@ namespace FinalSprintProject
                 cmd.ExecuteNonQuery();
 
                 //close connection
-                // this.CloseConnection();
+                this.CloseConnection();
             }
         }
 
