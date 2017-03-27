@@ -33,5 +33,20 @@ namespace FinalSprintProject
         {
 
         }
+
+        private void addEvent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            addEvent f1 = new addEvent();
+            f1.ShowDialog();
+
+        }
+
+        private void deleteEvent_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            deleteEvent f1 = new deleteEvent();
+            f1.ShowDialog();
+        }
     }
 }

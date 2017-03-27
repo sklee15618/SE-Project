@@ -139,7 +139,41 @@ namespace FinalSprintProject
         //Paperless Waiver statement
 
 
-           
+
+            public void AddEvent(string date, string name, string memo)
+        {
+            string command = "INSERT INTO event (name,date,memo) VALUES('" + name + "','" + date + "','" + memo + "')";
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(command, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        /*
+        public void showEvent(string name)
+        {
+            string queryEvent = "SELECT * FROM sample_table.event WHERE name = " + name;
+            MySqlCommand cmd1 = new MySqlCommand(queryEvent, connection);
+            MySqlDataReader myReader = cmd1.ExecuteReader();
+
+            while (myReader.Read()) // Verifies if the user exists in the database
+            {
+                string sName = myReader.GetString("name");
+                comboBox1.Items.Add(sName);
+            }
+
+            //close Data Reader
+            myReader.Close();
+
+        }
+        */
         public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string currentTime, string TimeArr_txt, string TimeLeft_txt)
 
         //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
