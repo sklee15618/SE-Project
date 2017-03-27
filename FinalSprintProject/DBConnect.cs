@@ -89,12 +89,12 @@ namespace FinalSprintProject
         public void Insert_Employee(string FirstName_txt, string LastName_txt, 
             string dateTimePicker1, 
             string Address, string City_txt, string State_txt,
-            string ZipCode_txt, string Phone_txt, string Position_Combobox)
+            string ZipCode_txt, string Phone_txt, string email, string Position_Combobox)
         {
 
-            string queryemp = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,isEmployee, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','1', '0', '0')";
-            string querymanager = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,isManager, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','1', '0', '0')";
-            string queryadmin = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,isAdmin, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','1', '0', '0')";
+            string queryemp = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,email, isEmployee, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '"+ email + "', '1', '0', '0')";
+            string querymanager = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone, email, isManager, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '1', '0', '0')";
+            string queryadmin = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone, email, isAdmin, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '1', '0', '0')";
 
             //VALUES()
             //open connection
@@ -257,7 +257,7 @@ namespace FinalSprintProject
             string Gender, string Age, string PhoneNumber, string Email, string Address,
             string Suspended, string NeedRenewal, DataGrid PatronProfileView)
         {
-            string query = "SELECT * FROM sample_table.patron_table WHERE idpatron = " + ID + " AND FirstName = " + FirstName + "  AND LastName = " + LastName + " AND Gender = " + Gender + " AND Age = " + Age + "  AND phoneNumber = " + PhoneNumber + "  AND Email = " + Email + "  AND Address = " + Address + "  AND Suspended = " + Suspended + "  AND needRenewal = " + NeedRenewal + "";
+            string query = "SELECT * FROM sample_table.personal_info_table WHERE idpatron = " + ID + " AND FirstName = " + FirstName + "  AND LastName = " + LastName + " AND Gender = " + Gender + " AND Age = " + Age + "  AND phoneNumber = " + PhoneNumber + "  AND Email = " + Email + "  AND Address = " + Address + "  AND Suspended = " + Suspended + "  AND needRenewal = " + NeedRenewal + "";
             if (this.OpenConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);

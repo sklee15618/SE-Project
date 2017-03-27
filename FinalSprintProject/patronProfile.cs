@@ -45,7 +45,7 @@ namespace FinalSprintProject
 
             string constring = "datasource=localhost;port=3306;username=root;password=3a1w";
             MySqlConnection conDatabase = new MySqlConnection(constring);
-            MySqlCommand cmdDatabase = new MySqlCommand("SELECT * FROM sample_table.patron_table ;", conDatabase);
+            MySqlCommand cmdDatabase = new MySqlCommand("SELECT * FROM sample_table.personal_info_table ;", conDatabase);
 
             try
             {

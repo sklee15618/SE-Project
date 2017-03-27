@@ -55,7 +55,7 @@ namespace FinalSprintProject
 
             c.Insert_Employee(this.FirstName_txt.Text, this.LastName_txt.Text, this.dateTimePicker1.Text,
                  this.Address_txt.Text, this.City_txt.Text, this.State_txt.Text, 
-                 this.ZipCode_txt.Text, this.Phone_txt.Text, this.Position_Combobox.Text
+                 this.ZipCode_txt.Text, this.Phone_txt.Text, this.email.Text, this.Position_Combobox.Text
                  );
             MessageBox.Show("Information saved");
            // this.Hide();
@@ -64,6 +64,11 @@ namespace FinalSprintProject
         }
 
         private void Phone_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
