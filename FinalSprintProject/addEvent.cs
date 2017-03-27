@@ -46,6 +46,7 @@ namespace FinalSprintProject
             this.Hide();
             calendar f3 = new calendar();
             f3.ShowDialog();
+
             // this.Hide();
             // Form1 f1 = new Form1();
             //f1.ShowDialog();
