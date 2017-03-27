@@ -101,7 +101,7 @@
             this.SearchPatronID.Name = "SearchPatronID";
             this.SearchPatronID.Size = new System.Drawing.Size(163, 22);
             this.SearchPatronID.TabIndex = 4;
-            this.SearchPatronID.TextChanged += new System.EventHandler(this.SearchPatronID_TextChanged);
+            this.SearchPatronID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SearchPatronID_KeyPress);
             // 
             // body_txt
             // 
@@ -297,7 +297,7 @@
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.upadateButton_Click);
             // 
-            // Form4
+            // suspensions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -327,7 +327,7 @@
             this.Controls.Add(this.IncidentReporLlabel);
             this.Controls.Add(this.PatronIDLabel);
             this.Controls.Add(this.Suspensionslabel);
-            this.Name = "Form4";
+            this.Name = "suspensions";
             this.Text = "Form4";
             this.Load += new System.EventHandler(this.LoadTalbe_txt_Click);
             ((System.ComponentModel.ISupportInitialize)(this.PatronProfileView)).EndInit();
