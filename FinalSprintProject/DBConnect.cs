@@ -92,68 +92,31 @@ namespace FinalSprintProject
             string ZipCode_txt, string Phone_txt, string Position_Combobox)
         {
 
-            string queryemp = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,isEmployee, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','1', '0', '0')";
-            string querymanager = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,isManager, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','1', '0', '0')";
-            string queryadmin = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,isAdmin, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','1', '0', '0')";
-
+            string query = "INSERT INTO emp_table (firstname,lastname,birthday,address,city,state,zip,phone,position) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 +"', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','"+ Position_Combobox +"')";
             //VALUES()
+
             //open connection
             if (this.OpenConnection() == true)
             {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
-                if (Position_Combobox == "Employee")
-                {
-                    //create command and assign the query and connection from the constructor
-                    MySqlCommand cmd = new MySqlCommand(queryemp, connection);
-
-                    //Execute command
-                    cmd.ExecuteNonQuery();
-                }
-
-                else if (Position_Combobox == "Manager")
-                {
-                    //create command and assign the query and connection from the constructor
-                    MySqlCommand cmd = new MySqlCommand(querymanager, connection);
-
-                    //Execute command
-                    cmd.ExecuteNonQuery();
-                }
-
-                else if (Position_Combobox == "Administrator")
-                {
-                    //create command and assign the query and connection from the constructor
-                    MySqlCommand cmd = new MySqlCommand(queryadmin, connection);
-
-                    //Execute command
-                    cmd.ExecuteNonQuery();
-                }
+                //Execute command
+                cmd.ExecuteNonQuery();
 
                 //close connection
-                this.CloseConnection();
+               // this.CloseConnection();
             }
         }
 
         public void UpdateSuspension(bool suspend, string SearchPatronID)
         {
-            string querymatch = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + SearchPatronID + " ";
+            //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
             string query = "UPDATE personal_info_table SET suspended = "+suspend+" where ID = '" + SearchPatronID + "' ";
-            
+
             //open connection
             if (this.OpenConnection() == true)
             {
-
-                MySqlCommand cmd1 = new MySqlCommand(querymatch, connection);
-                MySqlDataReader dataReader1 = cmd1.ExecuteReader();
-                if (!dataReader1.Read()) // Verifies if the user exists in the database
-                {
-                    MessageBox.Show(" unvalid match");
-                }
-                else
-                {
-                    MessageBox.Show(" Information updated");
-                }
-                dataReader1.Close();
-
                 //create mysql command
                 MySqlCommand cmd = new MySqlCommand();
                 //Assign the query using CommandText
@@ -174,8 +137,14 @@ namespace FinalSprintProject
 
            
         public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string currentTime, string TimeArr_txt, string TimeLeft_txt)
+
         //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
+
+
+
+
         {
+
             //string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('" + PrintName_txt + "','" + SignName_txt + "','" + MemType_txt + "','" + Gender_txt + "', '" + TestDate_txt + "' , '" + TimeArr_txt + "','" + TimeLeft_txt + "')";
 
             string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('"+ PrintName_txt + "','"+ SignName_txt + "','"+ MemType_txt + "','"+ Gender_txt + "', '" + currentTime + "' , '"+ TimeArr_txt + "','"+ TimeLeft_txt + "')";

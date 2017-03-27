@@ -45,19 +45,21 @@ namespace FinalSprintProject
                 dbdataset = new DataTable();
                 sda.Fill(dbdataset);
                 BindingSource bSource = new BindingSource();
-                
+
                 // creates a copy of the data set (clone) //
+
                 DataTable dtCloned = dbdataset.Clone();
 
                 // change the data type of the specific row //
                 dtCloned.Columns["suspended"].DataType = typeof(String);
-
+                
                 // copying the contents of the dataset
                 foreach (DataRow row in dbdataset.Rows)
                 {
-                    dtCloned.ImportRow(row);         
+                    dtCloned.ImportRow(row);
                 }
-                
+
+
                 foreach (DataRow row in dtCloned.Rows)
                 {
                     // check if the suspended flag to a user friendly value //
@@ -69,12 +71,10 @@ namespace FinalSprintProject
                     {
                         row["suspended"] = "NO";
                     }
-
                 }
-                
                 bSource.DataSource = dtCloned;
                 PatronProfileView.DataSource = bSource;
-                
+
                 //sda.Update(dtCloned);
                 /*bSource.DataSource = dbdataset;
                 PatronProfileView.DataSource = bSource;
@@ -89,8 +89,7 @@ namespace FinalSprintProject
         private void SearchPatronID_TextChanged(object sender, EventArgs e)
         {
             DataView DV = new DataView(dbdataset);
-            //DV.RowFilter = string.Format("ID LIKE '%{0}%'", SearchPatronID.Text);
-            DV.RowFilter = "Convert(id, 'System.String') like '%" + SearchPatronID.Text + "%'";
+            DV.RowFilter = string.Format("ID LIKE '%{0}%'", SearchPatronID.Text);
             PatronProfileView.DataSource = DV;
         }
 
@@ -138,7 +137,8 @@ namespace FinalSprintProject
             DBConnect c = new DBConnect();
 
             c.UpdateSuspension(suspend, SearchPatronID.Text);
-
+            
+            MessageBox.Show("Information updated");
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -149,15 +149,6 @@ namespace FinalSprintProject
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             suspend = false;
-        }
-
-        private void SearchPatronID_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-            if(!Char.IsDigit(ch) && ch != 8)
-            {
-                e.Handled = true;
-            }
         }
     }
 }

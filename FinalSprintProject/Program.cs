@@ -19,7 +19,7 @@ namespace FinalSprintProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new loginScreen());
-            Application.Run(new suspensions());
+            Application.Run(new paperlessWaiver());
 
             //DBConnect c = new DBConnect();
             //string query = "INSERT INTO Persons (LastName, FirstName, Address, City) VALUES('ethen','lee','3a1w','brookings')";
