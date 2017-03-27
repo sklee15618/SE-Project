@@ -135,6 +135,7 @@ namespace FinalSprintProject
         //Paperless Waiver statement
 
 
+           
         public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string currentTime, string TimeArr_txt, string TimeLeft_txt)
 
         //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
@@ -222,7 +223,7 @@ namespace FinalSprintProject
         }
 
         // patron profile
-        public void PatronProfile(string ID, string FirstName, string LastName,
+        public void PatronProfile(string ID, string FirstName, string LastName, 
             string Gender, string Age, string PhoneNumber, string Email, string Address,
             string Suspended, string NeedRenewal, DataGrid PatronProfileView)
         {

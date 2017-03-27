@@ -10,28 +10,18 @@ using System.Windows.Forms;
 
 namespace FinalSprintProject
 {
-    public partial class calendar : Form
+    public partial class deleteEvent : Form
     {
-        public calendar()
+        public deleteEvent()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            mainMenu f1 = new mainMenu();
+            calendar f2 = new calendar();
             f1.ShowDialog();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
