@@ -12,6 +12,7 @@ namespace FinalSprintProject
 {
     public partial class addEvent : Form
     {
+
         public addEvent()
         {
             InitializeComponent();

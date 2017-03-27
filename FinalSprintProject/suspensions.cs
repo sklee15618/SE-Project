@@ -106,6 +106,7 @@ namespace FinalSprintProject
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+
         }
 
         private void GenerateEmailButton_Click(object sender, EventArgs e)
