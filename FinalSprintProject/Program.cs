@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 
 
 namespace FinalSprintProject
@@ -19,7 +19,7 @@ namespace FinalSprintProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new loginScreen());
-            Application.Run(new calendar());
+            Application.Run(new suspensions());
 
             //DBConnect c = new DBConnect();
             //string query = "INSERT INTO Persons (LastName, FirstName, Address, City) VALUES('ethen','lee','3a1w','brookings')";
