@@ -20,6 +20,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -134,7 +135,7 @@
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(899, 348);
+            this.saveButton.Location = new System.Drawing.Point(902, 348);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(129, 32);
             this.saveButton.TabIndex = 19;
@@ -206,7 +207,7 @@
             this.searchEventNameBox.Size = new System.Drawing.Size(248, 22);
             this.searchEventNameBox.TabIndex = 29;
             // 
-            // calendar
+            // calendarNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,7 +230,7 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.EventsLabel);
             this.Controls.Add(this.label1);
-            this.Name = "calendar";
+            this.Name = "calendarNew";
             this.Text = "Form9";
             ((System.ComponentModel.ISupportInitialize)(this.eventsDataGrid)).EndInit();
             this.ResumeLayout(false);
