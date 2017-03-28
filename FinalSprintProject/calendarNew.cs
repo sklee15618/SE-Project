@@ -10,30 +10,31 @@ using System.Windows.Forms;
 
 namespace FinalSprintProject
 {
-    public partial class inventory : Form
+    public partial class calendarNew : Form
     {
-        public inventory()
+        public calendarNew()
         {
             InitializeComponent();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
             mainMenu f1 = new mainMenu();
             f1.ShowDialog();
+
         }
 
-        private void checkOutButton_Click(object sender, EventArgs e)
-        {
-            DBConnect c = new DBConnect();
-            c.Inventory(this.idTxt.Text, this.equipTxt.Text, 0);
-            MessageBox.Show("Checked out!");
-        }
-
-        private void label3_Click_1(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    
     }
 }

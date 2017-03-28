@@ -70,7 +70,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addEvent.Designer.cs">
+      <DependentUpon>addEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="DBConnect.cs" />
+    <Compile Include="deleteEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteEvent.Designer.cs">
+      <DependentUpon>deleteEvent.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addEvent.resx">
+      <DependentUpon>addEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteEvent.resx">
+      <DependentUpon>deleteEvent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainMenu.resx">
       <DependentUpon>mainMenu.cs</DependentUpon>
     </EmbeddedResource>

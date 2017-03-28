@@ -91,6 +91,7 @@ namespace FinalSprintProject
             }
         }
 
+
         private void deleteButton_Click(object sender, EventArgs e)
         {
 
@@ -120,6 +121,7 @@ namespace FinalSprintProject
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
+
                 }
             }
         }

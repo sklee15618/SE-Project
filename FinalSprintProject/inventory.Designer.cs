@@ -29,22 +29,18 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.searchIDTxt = new System.Windows.Forms.Label();
-            this.searchIDTxtBox = new System.Windows.Forms.TextBox();
-            this.equipTxt = new System.Windows.Forms.Label();
-            this.equipDataView = new System.Windows.Forms.DataGridView();
-            this.checkOutInv = new System.Windows.Forms.Label();
-            this.idTxt = new System.Windows.Forms.Label();
-            this.idTxtBox = new System.Windows.Forms.TextBox();
-            this.nameTxt = new System.Windows.Forms.Label();
-            this.nameTxtBox = new System.Windows.Forms.TextBox();
-            this.equipmentTxt = new System.Windows.Forms.Label();
-            this.equipTxtBox = new System.Windows.Forms.RichTextBox();
-            this.checkOutButton = new System.Windows.Forms.Button();
-            this.checkInButton = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.equipDataView)).BeginInit();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -53,163 +49,137 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(58, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 29);
+            this.label1.Size = new System.Drawing.Size(390, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Search Inventory";
+            this.label1.Text = "Equipement Check Out/Check In";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 123);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(21, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ID";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(60, 199);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Equipment";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(68, 437);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Rope Lifespan";
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(513, 474);
+            this.button6.Location = new System.Drawing.Point(222, 584);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(258, 39);
+            this.button6.Size = new System.Drawing.Size(242, 39);
             this.button6.TabIndex = 16;
             this.button6.Text = "Return to Main Menu";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // searchIDTxt
+            // button7
             // 
-            this.searchIDTxt.AutoSize = true;
-            this.searchIDTxt.Location = new System.Drawing.Point(60, 111);
-            this.searchIDTxt.Name = "searchIDTxt";
-            this.searchIDTxt.Size = new System.Drawing.Size(70, 17);
-            this.searchIDTxt.TabIndex = 17;
-            this.searchIDTxt.Text = "Search ID";
+            this.button7.Location = new System.Drawing.Point(61, 390);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(215, 23);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Check Out";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // searchIDTxtBox
+            // button8
             // 
-            this.searchIDTxtBox.Location = new System.Drawing.Point(136, 106);
-            this.searchIDTxtBox.Name = "searchIDTxtBox";
-            this.searchIDTxtBox.Size = new System.Drawing.Size(166, 22);
-            this.searchIDTxtBox.TabIndex = 18;
-            // 
-            // equipTxt
-            // 
-            this.equipTxt.AutoSize = true;
-            this.equipTxt.Location = new System.Drawing.Point(60, 155);
-            this.equipTxt.Name = "equipTxt";
-            this.equipTxt.Size = new System.Drawing.Size(75, 17);
-            this.equipTxt.TabIndex = 19;
-            this.equipTxt.Text = "Equipment";
-            // 
-            // equipDataView
-            // 
-            this.equipDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.equipDataView.Location = new System.Drawing.Point(63, 196);
-            this.equipDataView.Name = "equipDataView";
-            this.equipDataView.RowTemplate.Height = 24;
-            this.equipDataView.Size = new System.Drawing.Size(542, 234);
-            this.equipDataView.TabIndex = 20;
-            // 
-            // checkOutInv
-            // 
-            this.checkOutInv.AutoSize = true;
-            this.checkOutInv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkOutInv.Location = new System.Drawing.Point(642, 43);
-            this.checkOutInv.Name = "checkOutInv";
-            this.checkOutInv.Size = new System.Drawing.Size(355, 29);
-            this.checkOutInv.TabIndex = 21;
-            this.checkOutInv.Text = "Check Out/Check In Inventory";
-            // 
-            // idTxt
-            // 
-            this.idTxt.AutoSize = true;
-            this.idTxt.Location = new System.Drawing.Point(644, 111);
-            this.idTxt.Name = "idTxt";
-            this.idTxt.Size = new System.Drawing.Size(21, 17);
-            this.idTxt.TabIndex = 22;
-            this.idTxt.Text = "ID";
-            // 
-            // idTxtBox
-            // 
-            this.idTxtBox.Location = new System.Drawing.Point(757, 106);
-            this.idTxtBox.Name = "idTxtBox";
-            this.idTxtBox.Size = new System.Drawing.Size(240, 22);
-            this.idTxtBox.TabIndex = 23;
-            // 
-            // nameTxt
-            // 
-            this.nameTxt.AutoSize = true;
-            this.nameTxt.Location = new System.Drawing.Point(644, 155);
-            this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(45, 17);
-            this.nameTxt.TabIndex = 24;
-            this.nameTxt.Text = "Name";
-            // 
-            // nameTxtBox
-            // 
-            this.nameTxtBox.Location = new System.Drawing.Point(757, 155);
-            this.nameTxtBox.Name = "nameTxtBox";
-            this.nameTxtBox.Size = new System.Drawing.Size(240, 22);
-            this.nameTxtBox.TabIndex = 25;
-            // 
-            // equipmentTxt
-            // 
-            this.equipmentTxt.AutoSize = true;
-            this.equipmentTxt.Location = new System.Drawing.Point(644, 199);
-            this.equipmentTxt.Name = "equipmentTxt";
-            this.equipmentTxt.Size = new System.Drawing.Size(75, 17);
-            this.equipmentTxt.TabIndex = 26;
-            this.equipmentTxt.Text = "Equipment";
-            // 
-            // equipTxtBox
-            // 
-            this.equipTxtBox.Location = new System.Drawing.Point(757, 196);
-            this.equipTxtBox.Name = "equipTxtBox";
-            this.equipTxtBox.Size = new System.Drawing.Size(356, 168);
-            this.equipTxtBox.TabIndex = 27;
-            this.equipTxtBox.Text = "";
-            // 
-            // checkOutButton
-            // 
-            this.checkOutButton.Location = new System.Drawing.Point(757, 382);
-            this.checkOutButton.Name = "checkOutButton";
-            this.checkOutButton.Size = new System.Drawing.Size(175, 48);
-            this.checkOutButton.TabIndex = 28;
-            this.checkOutButton.Text = "Check Out";
-            this.checkOutButton.UseVisualStyleBackColor = true;
-            // 
-            // checkInButton
-            // 
-            this.checkInButton.Location = new System.Drawing.Point(938, 382);
-            this.checkInButton.Name = "checkInButton";
-            this.checkInButton.Size = new System.Drawing.Size(175, 48);
-            this.checkInButton.TabIndex = 29;
-            this.checkInButton.Text = "Check In";
-            this.checkInButton.UseVisualStyleBackColor = true;
+            this.button8.Location = new System.Drawing.Point(418, 390);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(209, 23);
+            this.button8.TabIndex = 18;
+            this.button8.Text = "Check In";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(136, 150);
+            this.textBox1.Location = new System.Drawing.Point(63, 143);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 22);
-            this.textBox1.TabIndex = 30;
+            this.textBox1.Size = new System.Drawing.Size(215, 22);
+            this.textBox1.TabIndex = 19;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(61, 219);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(566, 152);
+            this.richTextBox1.TabIndex = 21;
+            this.richTextBox1.Text = "";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(68, 469);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(96, 17);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Rope Number";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(71, 489);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(129, 22);
+            this.textBox2.TabIndex = 23;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(252, 469);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 17);
+            this.label5.TabIndex = 24;
+            this.label5.Text = "Increment Use";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(255, 488);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Increment";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1259, 534);
+            this.ClientSize = new System.Drawing.Size(696, 635);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.checkInButton);
-            this.Controls.Add(this.checkOutButton);
-            this.Controls.Add(this.equipTxtBox);
-            this.Controls.Add(this.equipmentTxt);
-            this.Controls.Add(this.nameTxtBox);
-            this.Controls.Add(this.nameTxt);
-            this.Controls.Add(this.idTxtBox);
-            this.Controls.Add(this.idTxt);
-            this.Controls.Add(this.checkOutInv);
-            this.Controls.Add(this.equipDataView);
-            this.Controls.Add(this.equipTxt);
-            this.Controls.Add(this.searchIDTxtBox);
-            this.Controls.Add(this.searchIDTxt);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "inventory";
             this.Text = "Form8";
-            ((System.ComponentModel.ISupportInitialize)(this.equipDataView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,20 +188,17 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label searchIDTxt;
-        private System.Windows.Forms.TextBox searchIDTxtBox;
-        private System.Windows.Forms.Label equipTxt;
-        private System.Windows.Forms.DataGridView equipDataView;
-        private System.Windows.Forms.Label checkOutInv;
-        private System.Windows.Forms.Label idTxt;
-        private System.Windows.Forms.TextBox idTxtBox;
-        private System.Windows.Forms.Label nameTxt;
-        private System.Windows.Forms.TextBox nameTxtBox;
-        private System.Windows.Forms.Label equipmentTxt;
-        private System.Windows.Forms.RichTextBox equipTxtBox;
-        private System.Windows.Forms.Button checkOutButton;
-        private System.Windows.Forms.Button checkInButton;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button1;
     }
 }

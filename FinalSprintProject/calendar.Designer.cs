@@ -20,6 +20,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -122,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 524);
+            this.ClientSize = new System.Drawing.Size(1077, 524);
             this.Controls.Add(this.deleteEvent);
             this.Controls.Add(this.addEvent);
             this.Controls.Add(this.label2);

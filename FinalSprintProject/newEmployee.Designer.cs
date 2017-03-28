@@ -47,6 +47,8 @@
             this.State_txt = new System.Windows.Forms.TextBox();
             this.ZipCode_txt = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.email_txt = new System.Windows.Forms.Label();
+            this.email = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // RegisterNewEmployeeLabel
@@ -114,7 +116,7 @@
             // 
             this.PhoneLabel.AutoSize = true;
             this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PhoneLabel.Location = new System.Drawing.Point(33, 309);
+            this.PhoneLabel.Location = new System.Drawing.Point(34, 305);
             this.PhoneLabel.Name = "PhoneLabel";
             this.PhoneLabel.Size = new System.Drawing.Size(74, 25);
             this.PhoneLabel.TabIndex = 8;
@@ -124,7 +126,7 @@
             // 
             this.PositionLabel.AutoSize = true;
             this.PositionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PositionLabel.Location = new System.Drawing.Point(33, 370);
+            this.PositionLabel.Location = new System.Drawing.Point(34, 374);
             this.PositionLabel.Name = "PositionLabel";
             this.PositionLabel.Size = new System.Drawing.Size(89, 25);
             this.PositionLabel.TabIndex = 9;
@@ -183,7 +185,7 @@
             "Employee",
             "Manager",
             "Administrator"});
-            this.Position_Combobox.Location = new System.Drawing.Point(209, 374);
+            this.Position_Combobox.Location = new System.Drawing.Point(209, 378);
             this.Position_Combobox.Name = "Position_Combobox";
             this.Position_Combobox.Size = new System.Drawing.Size(297, 24);
             this.Position_Combobox.TabIndex = 20;
@@ -191,7 +193,7 @@
             // 
             // Phone_txt
             // 
-            this.Phone_txt.Location = new System.Drawing.Point(209, 313);
+            this.Phone_txt.Location = new System.Drawing.Point(209, 309);
             this.Phone_txt.Name = "Phone_txt";
             this.Phone_txt.Size = new System.Drawing.Size(297, 22);
             this.Phone_txt.TabIndex = 23;
@@ -227,11 +229,31 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(293, 22);
             this.dateTimePicker1.TabIndex = 27;
             // 
-            // Form3
+            // email_txt
+            // 
+            this.email_txt.AutoSize = true;
+            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.Location = new System.Drawing.Point(35, 342);
+            this.email_txt.Name = "email_txt";
+            this.email_txt.Size = new System.Drawing.Size(73, 25);
+            this.email_txt.TabIndex = 28;
+            this.email_txt.Text = "E-mail";
+            this.email_txt.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(209, 345);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(297, 22);
+            this.email.TabIndex = 29;
+            // 
+            // newEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 700);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.email_txt);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.ZipCode_txt);
             this.Controls.Add(this.State_txt);
@@ -251,7 +273,7 @@
             this.Controls.Add(this.LastnameLabel);
             this.Controls.Add(this.FirstnameLabel);
             this.Controls.Add(this.RegisterNewEmployeeLabel);
-            this.Name = "Form3";
+            this.Name = "newEmployee";
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
@@ -280,5 +302,7 @@
         private System.Windows.Forms.TextBox State_txt;
         private System.Windows.Forms.TextBox ZipCode_txt;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label email_txt;
+        private System.Windows.Forms.TextBox email;
     }
 }

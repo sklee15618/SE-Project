@@ -22,6 +22,7 @@ namespace FinalSprintProject
             this.Hide();
             mainMenu f1 = new mainMenu();
             f1.ShowDialog();
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
