@@ -48,6 +48,7 @@
             this.searchEventName = new System.Windows.Forms.TextBox();
             this.addEventName = new System.Windows.Forms.Label();
             this.searchEventNameBox = new System.Windows.Forms.TextBox();
+            this.loadDataBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +56,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 35);
+            this.label1.Location = new System.Drawing.Point(11, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 29);
+            this.label1.Size = new System.Drawing.Size(94, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Calendar";
             // 
@@ -65,24 +66,26 @@
             // 
             this.EventsLabel.AutoSize = true;
             this.EventsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EventsLabel.Location = new System.Drawing.Point(287, 35);
+            this.EventsLabel.Location = new System.Drawing.Point(251, 26);
             this.EventsLabel.Name = "EventsLabel";
-            this.EventsLabel.Size = new System.Drawing.Size(180, 29);
+            this.EventsLabel.Size = new System.Drawing.Size(145, 24);
             this.EventsLabel.TabIndex = 1;
             this.EventsLabel.Text = "Search Events";
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(5, 173);
+            this.monthCalendar1.Location = new System.Drawing.Point(4, 130);
+            this.monthCalendar1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(525, 434);
+            this.button1.Location = new System.Drawing.Point(459, 326);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(245, 56);
+            this.button1.Size = new System.Drawing.Size(214, 42);
             this.button1.TabIndex = 4;
             this.button1.Text = "Return to Main Menu";
             this.button1.UseVisualStyleBackColor = true;
@@ -91,53 +94,56 @@
             // dataTxt
             // 
             this.dataTxt.AutoSize = true;
-            this.dataTxt.Location = new System.Drawing.Point(797, 118);
+            this.dataTxt.Location = new System.Drawing.Point(697, 88);
             this.dataTxt.Name = "dataTxt";
-            this.dataTxt.Size = new System.Drawing.Size(78, 17);
+            this.dataTxt.Size = new System.Drawing.Size(65, 12);
             this.dataTxt.TabIndex = 9;
             this.dataTxt.Text = "Event Date";
             // 
             // eventTxtBox
             // 
-            this.eventTxtBox.Location = new System.Drawing.Point(922, 156);
+            this.eventTxtBox.Location = new System.Drawing.Point(807, 117);
+            this.eventTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventTxtBox.Name = "eventTxtBox";
-            this.eventTxtBox.Size = new System.Drawing.Size(258, 173);
+            this.eventTxtBox.Size = new System.Drawing.Size(226, 131);
             this.eventTxtBox.TabIndex = 10;
             this.eventTxtBox.Text = "";
             // 
             // eventsDataGrid
             // 
             this.eventsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.eventsDataGrid.Location = new System.Drawing.Point(292, 173);
+            this.eventsDataGrid.Location = new System.Drawing.Point(256, 130);
+            this.eventsDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventsDataGrid.Name = "eventsDataGrid";
             this.eventsDataGrid.RowTemplate.Height = 24;
-            this.eventsDataGrid.Size = new System.Drawing.Size(478, 207);
+            this.eventsDataGrid.Size = new System.Drawing.Size(418, 155);
             this.eventsDataGrid.TabIndex = 11;
             // 
             // addEvents
             // 
             this.addEvents.AutoSize = true;
             this.addEvents.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEvents.Location = new System.Drawing.Point(795, 35);
+            this.addEvents.Location = new System.Drawing.Point(696, 26);
             this.addEvents.Name = "addEvents";
-            this.addEvents.Size = new System.Drawing.Size(236, 29);
+            this.addEvents.Size = new System.Drawing.Size(189, 24);
             this.addEvents.TabIndex = 16;
             this.addEvents.Text = "Add/Update Events";
             // 
             // eventTxt
             // 
             this.eventTxt.AutoSize = true;
-            this.eventTxt.Location = new System.Drawing.Point(797, 159);
+            this.eventTxt.Location = new System.Drawing.Point(697, 119);
             this.eventTxt.Name = "eventTxt";
-            this.eventTxt.Size = new System.Drawing.Size(119, 17);
+            this.eventTxt.Size = new System.Drawing.Size(103, 12);
             this.eventTxt.TabIndex = 18;
             this.eventTxt.Text = "Event Description";
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(902, 348);
+            this.saveButton.Location = new System.Drawing.Point(789, 261);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(129, 32);
+            this.saveButton.Size = new System.Drawing.Size(113, 24);
             this.saveButton.TabIndex = 19;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -145,16 +151,18 @@
             // eventDate
             // 
             this.eventDate.CustomFormat = "yyyy-MM-dd";
-            this.eventDate.Location = new System.Drawing.Point(922, 111);
+            this.eventDate.Location = new System.Drawing.Point(807, 83);
+            this.eventDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.eventDate.Name = "eventDate";
-            this.eventDate.Size = new System.Drawing.Size(248, 22);
+            this.eventDate.Size = new System.Drawing.Size(218, 21);
             this.eventDate.TabIndex = 20;
             // 
             // updateButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(1067, 348);
+            this.updateButton.Location = new System.Drawing.Point(934, 261);
+            this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(129, 32);
+            this.updateButton.Size = new System.Drawing.Size(113, 24);
             this.updateButton.TabIndex = 21;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
@@ -162,56 +170,69 @@
             // searchEvenDate
             // 
             this.searchEvenDate.AutoSize = true;
-            this.searchEvenDate.Location = new System.Drawing.Point(289, 118);
+            this.searchEvenDate.Location = new System.Drawing.Point(253, 88);
             this.searchEvenDate.Name = "searchEvenDate";
-            this.searchEvenDate.Size = new System.Drawing.Size(127, 17);
+            this.searchEvenDate.Size = new System.Drawing.Size(109, 12);
             this.searchEvenDate.TabIndex = 23;
             this.searchEvenDate.Text = "Search Event Date";
             // 
             // searchEventDate
             // 
-            this.searchEventDate.Location = new System.Drawing.Point(443, 113);
+            this.searchEventDate.Location = new System.Drawing.Point(388, 85);
+            this.searchEventDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchEventDate.Name = "searchEventDate";
-            this.searchEventDate.Size = new System.Drawing.Size(167, 22);
+            this.searchEventDate.Size = new System.Drawing.Size(147, 21);
             this.searchEventDate.TabIndex = 25;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(289, 81);
+            this.label2.Location = new System.Drawing.Point(253, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 17);
+            this.label2.Size = new System.Drawing.Size(118, 12);
             this.label2.TabIndex = 26;
             this.label2.Text = "Search Event Name";
             // 
             // searchEventName
             // 
-            this.searchEventName.Location = new System.Drawing.Point(443, 78);
+            this.searchEventName.Location = new System.Drawing.Point(388, 58);
+            this.searchEventName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchEventName.Name = "searchEventName";
-            this.searchEventName.Size = new System.Drawing.Size(167, 22);
+            this.searchEventName.Size = new System.Drawing.Size(147, 21);
             this.searchEventName.TabIndex = 27;
             // 
             // addEventName
             // 
             this.addEventName.AutoSize = true;
-            this.addEventName.Location = new System.Drawing.Point(797, 83);
+            this.addEventName.Location = new System.Drawing.Point(697, 62);
             this.addEventName.Name = "addEventName";
-            this.addEventName.Size = new System.Drawing.Size(85, 17);
+            this.addEventName.Size = new System.Drawing.Size(74, 12);
             this.addEventName.TabIndex = 28;
             this.addEventName.Text = "Event Name";
             // 
             // searchEventNameBox
             // 
-            this.searchEventNameBox.Location = new System.Drawing.Point(922, 76);
+            this.searchEventNameBox.Location = new System.Drawing.Point(807, 57);
+            this.searchEventNameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.searchEventNameBox.Name = "searchEventNameBox";
-            this.searchEventNameBox.Size = new System.Drawing.Size(248, 22);
+            this.searchEventNameBox.Size = new System.Drawing.Size(218, 21);
             this.searchEventNameBox.TabIndex = 29;
+            // 
+            // loadDataBtn
+            // 
+            this.loadDataBtn.Location = new System.Drawing.Point(552, 58);
+            this.loadDataBtn.Name = "loadDataBtn";
+            this.loadDataBtn.Size = new System.Drawing.Size(122, 46);
+            this.loadDataBtn.TabIndex = 30;
+            this.loadDataBtn.Text = "Load data";
+            this.loadDataBtn.UseVisualStyleBackColor = true;
             // 
             // calendarNew
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1263, 524);
+            this.ClientSize = new System.Drawing.Size(1105, 393);
+            this.Controls.Add(this.loadDataBtn);
             this.Controls.Add(this.searchEventNameBox);
             this.Controls.Add(this.addEventName);
             this.Controls.Add(this.searchEventName);
@@ -230,6 +251,7 @@
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.EventsLabel);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "calendarNew";
             this.Text = "Form9";
             ((System.ComponentModel.ISupportInitialize)(this.eventsDataGrid)).EndInit();
@@ -259,5 +281,6 @@
         private System.Windows.Forms.TextBox searchEventName;
         private System.Windows.Forms.Label addEventName;
         private System.Windows.Forms.TextBox searchEventNameBox;
+        private System.Windows.Forms.Button loadDataBtn;
     }
 }
