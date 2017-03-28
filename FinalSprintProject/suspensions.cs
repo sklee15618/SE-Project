@@ -88,8 +88,8 @@ namespace FinalSprintProject
 
         private void SearchPatronID_TextChanged(object sender, EventArgs e)
         {
-            DataView DV = new DataView(dbdataset);
-            DV.RowFilter = string.Format("ID LIKE '%{0}%'", SearchPatronID.Text);
+            DataView DV = new DataView(dbdataset);          
+            DV.RowFilter = "Convert(ID, 'System.String') like '%" + SearchPatronID.Text + "%'";
             PatronProfileView.DataSource = DV;
         }
 

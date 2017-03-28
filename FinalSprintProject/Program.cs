@@ -19,11 +19,11 @@ namespace FinalSprintProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new calendar());
+           // Application.Run(new calendar());
             //Application.Run(new suspensions());
 
 
-            //Application.Run(new loginScreen());
+            Application.Run(new loginScreen());
             //Application.Run(new paperlessWaiver());
 
 
