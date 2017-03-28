@@ -89,10 +89,14 @@ namespace FinalSprintProject
         public void Insert_Employee(string FirstName_txt, string LastName_txt, 
             string dateTimePicker1, 
             string Address, string City_txt, string State_txt,
-            string ZipCode_txt, string Phone_txt, string Position_Combobox)
+            string ZipCode_txt, string Phone_txt, string email, string Position_Combobox)
         {
 
+            string queryemp = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,email, isEmployee, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '"+ email + "', '1', '0', '0')";
+            string querymanager = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone, email, isManager, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '1', '0', '0')";
+            string queryadmin = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone, email, isAdmin, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '1', '0', '0')";
             string query = "INSERT INTO emp_table (firstname,lastname,birthday,address,city,state,zip,phone,position) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 +"', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','"+ Position_Combobox +"')";
+
             //VALUES()
 
             //open connection
@@ -133,14 +137,51 @@ namespace FinalSprintProject
         }
 
         //Paperless Waiver statement
-        public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
-        //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string TestDate_txt, string TimeArr_txt, string TimeLeft_txt)
-        
+
+
+
+            public void AddEvent(string date, string name, string memo)
+        {
+            string command = "INSERT INTO event (name,date,memo) VALUES('" + name + "','" + date + "','" + memo + "')";
+            if (this.OpenConnection() == true)
             {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(command, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        /*
+        public void showEvent(string name)
+        {
+            string queryEvent = "SELECT * FROM sample_table.event WHERE name = " + name;
+            MySqlCommand cmd1 = new MySqlCommand(queryEvent, connection);
+            MySqlDataReader myReader = cmd1.ExecuteReader();
+
+            while (myReader.Read()) // Verifies if the user exists in the database
+            {
+                string sName = myReader.GetString("name");
+                comboBox1.Items.Add(sName);
+            }
+
+            //close Data Reader
+            myReader.Close();
+
+        }
+        */
+        public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string currentTime, string TimeArr_txt, string TimeLeft_txt)
+
+        //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
+        {
 
             //string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('" + PrintName_txt + "','" + SignName_txt + "','" + MemType_txt + "','" + Gender_txt + "', '" + TestDate_txt + "' , '" + TimeArr_txt + "','" + TimeLeft_txt + "')";
 
-            string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('"+ PrintName_txt + "','"+ SignName_txt + "','"+ MemType_txt + "','"+ Gender_txt + "', '" + dateWaiver + "' , '"+ TimeArr_txt + "','"+ TimeLeft_txt + "')";
+            string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('"+ PrintName_txt + "','"+ SignName_txt + "','"+ MemType_txt + "','"+ Gender_txt + "', '" + currentTime + "' , '"+ TimeArr_txt + "','"+ TimeLeft_txt + "')";
 
             //VALUES()
 
@@ -156,25 +197,6 @@ namespace FinalSprintProject
                 //close connection
                 this.CloseConnection();
             }
-        }
-
-        public void Inventory(string idTxt, string equipTxt, int checkOutButton)
-        {
-            string command = "INSERT INTO inventory (itemID, item_Name) VALUES ('"+ idTxt + "','"+ equipTxt + "','"+ checkOutButton +"')";
-
-            //open connection
-            if (this.OpenConnection() == true)
-            {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(command, connection);
-
-                //Execute command
-                cmd.ExecuteNonQuery();
-
-                //close connection
-                this.CloseConnection();
-            }
-
         }
 
         // login statement
@@ -235,11 +257,11 @@ namespace FinalSprintProject
         }
 
         // patron profile
-        public void PatronProfile(string ID, string FirstName, string LastName,
+        public void PatronProfile(string ID, string FirstName, string LastName, 
             string Gender, string Age, string PhoneNumber, string Email, string Address,
             string Suspended, string NeedRenewal, DataGrid PatronProfileView)
         {
-            string query = "SELECT * FROM sample_table.patron_table WHERE idpatron = " + ID + " AND FirstName = " + FirstName + "  AND LastName = " + LastName + " AND Gender = " + Gender + " AND Age = " + Age + "  AND phoneNumber = " + PhoneNumber + "  AND Email = " + Email + "  AND Address = " + Address + "  AND Suspended = " + Suspended + "  AND needRenewal = " + NeedRenewal + "";
+            string query = "SELECT * FROM sample_table.personal_info_table WHERE idpatron = " + ID + " AND FirstName = " + FirstName + "  AND LastName = " + LastName + " AND Gender = " + Gender + " AND Age = " + Age + "  AND phoneNumber = " + PhoneNumber + "  AND Email = " + Email + "  AND Address = " + Address + "  AND Suspended = " + Suspended + "  AND needRenewal = " + NeedRenewal + "";
             if (this.OpenConnection())
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
