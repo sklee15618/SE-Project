@@ -37,7 +37,9 @@ namespace FinalSprintProject
         private void SubmitButton_Click(object sender, EventArgs e)
         {
             DBConnect c = new DBConnect();
-            c.PaperlessWaiver(this.PrintName_txt.Text, this.SignName_txt.Text, this.MemType_txt.Text, this.Gender_txt.Text, this.DateTimeArr_txt.Text, this.TimeLeft_txt.Text);
+            //c.PaperlessWaiver(this.PrintName_txt.Text, this.SignName_txt.Text, this.MemType_txt.Text, this.Gender_txt.Text, this.TestDate_txt.Text, this.TimeArr_txt.Text, this.TimeLeft_txt.Text);
+
+            c.PaperlessWaiver(this.PrintName_txt.Text, this.SignName_txt.Text, this.MemType_txt.Text, this.Gender_txt.Text, this.dateWaiver.Text, this.TimeArr_txt.Text, this.TimeLeft_txt.Text);
             MessageBox.Show("Information saved");
            // this.Hide();
            // Form1 f1 = new Form1();
@@ -45,6 +47,16 @@ namespace FinalSprintProject
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void paperlessWaiver_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrintName_txt_TextChanged(object sender, EventArgs e)
         {
 
         }

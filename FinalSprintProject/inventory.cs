@@ -17,26 +17,6 @@ namespace FinalSprintProject
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -44,9 +24,11 @@ namespace FinalSprintProject
             f1.ShowDialog();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void checkOutButton_Click(object sender, EventArgs e)
         {
-
+            DBConnect c = new DBConnect();
+            c.Inventory(this.idTxt.Text, this.equipTxt.Text, 0);
+            MessageBox.Show("Checked out!");
         }
     }
 }

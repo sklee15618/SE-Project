@@ -32,7 +32,7 @@ namespace FinalSprintProject
         private void CalendarButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            calendar f9 = new calendar();
+            calendarNew f9 = new calendarNew();
             f9.ShowDialog();
         }
 

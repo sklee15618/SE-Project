@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FinalSprintProject
 {
-    public partial class calendar : Form
+    public partial class calendarNew : Form
     {
-        public calendar()
+        public calendarNew()
         {
             InitializeComponent();
         }
@@ -24,9 +24,6 @@ namespace FinalSprintProject
             f1.ShowDialog();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }

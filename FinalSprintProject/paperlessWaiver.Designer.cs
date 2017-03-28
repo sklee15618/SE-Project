@@ -144,6 +144,7 @@
             this.PrintName_txt.Name = "PrintName_txt";
             this.PrintName_txt.Size = new System.Drawing.Size(137, 22);
             this.PrintName_txt.TabIndex = 10;
+            this.PrintName_txt.TextChanged += new System.EventHandler(this.PrintName_txt_TextChanged);
             // 
             // Gender_txt
             // 
@@ -195,6 +196,7 @@
             // dateWaiver
             // 
             this.dateWaiver.CustomFormat = "yyyy-MM-dd";
+            this.dateWaiver.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateWaiver.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.dateWaiver.Location = new System.Drawing.Point(579, 421);
             this.dateWaiver.Name = "dateWaiver";
@@ -244,6 +246,7 @@
             this.Controls.Add(this.PaperlessWaiverLabel);
             this.Name = "paperlessWaiver";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.paperlessWaiver_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -19,6 +19,8 @@ namespace FinalSprintProject
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new loginScreen());
+            //Application.Run(new paperlessWaiver());
+
             //DBConnect c = new DBConnect();
             //string query = "INSERT INTO Persons (LastName, FirstName, Address, City) VALUES('ethen','lee','3a1w','brookings')";
             //c.Insert("INSERT INTO Persons(LastName, FirstName, Address, Email, Telephone,PW) VALUES('Manki','Min','123','Volga,SD','535653','123')");

@@ -133,9 +133,15 @@ namespace FinalSprintProject
         }
 
         //Paperless Waiver statement
-        public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string DateTimeArr_txt, string TimeLeft_txt)
-        {
-            string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,datetimeArr,timeLeft) VALUES ('"+ PrintName_txt + "','"+ SignName_txt + "','"+ MemType_txt + "','"+ Gender_txt + "','"+ DateTimeArr_txt + "','"+ TimeLeft_txt + "')";
+        public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
+        //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string TestDate_txt, string TimeArr_txt, string TimeLeft_txt)
+        
+            {
+
+            //string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('" + PrintName_txt + "','" + SignName_txt + "','" + MemType_txt + "','" + Gender_txt + "', '" + TestDate_txt + "' , '" + TimeArr_txt + "','" + TimeLeft_txt + "')";
+
+            string command = "INSERT INTO waiver_table (printname,signname,membertype,gender,waiverdate,timearr,timeleft) VALUES ('"+ PrintName_txt + "','"+ SignName_txt + "','"+ MemType_txt + "','"+ Gender_txt + "', '" + dateWaiver + "' , '"+ TimeArr_txt + "','"+ TimeLeft_txt + "')";
+
             //VALUES()
 
             //open connection
@@ -148,8 +154,27 @@ namespace FinalSprintProject
                 cmd.ExecuteNonQuery();
 
                 //close connection
-                // this.CloseConnection();
+                this.CloseConnection();
             }
+        }
+
+        public void Inventory(string idTxt, string equipTxt, int checkOutButton)
+        {
+            string command = "INSERT INTO inventory (itemID, item_Name) VALUES ('"+ idTxt + "','"+ equipTxt + "','"+ checkOutButton +"')";
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(command, connection);
+
+                //Execute command
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                this.CloseConnection();
+            }
+
         }
 
         // login statement
@@ -264,7 +289,7 @@ namespace FinalSprintProject
                 cmd.ExecuteNonQuery();
 
                 //close connection
-                // this.CloseConnection();
+                this.CloseConnection();
             }
         }
 
