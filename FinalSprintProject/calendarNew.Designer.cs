@@ -226,6 +226,7 @@
             this.loadDataBtn.TabIndex = 30;
             this.loadDataBtn.Text = "Load data";
             this.loadDataBtn.UseVisualStyleBackColor = true;
+            this.loadDataBtn.Click += new System.EventHandler(this.loadDataBtn_Click);
             // 
             // calendarNew
             // 

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Web;
+using System.Net.Mail;
 
 namespace FinalSprintProject
 {
@@ -35,6 +38,28 @@ namespace FinalSprintProject
 
         }
 
-    
+        private void loadDataBtn_Click(object sender, EventArgs e)
+        {
+            string constring = "datasource=localhost;port=3306;username=root;password=3a1w";
+            MySqlConnection conDatabase = new MySqlConnection(constring);
+            MySqlCommand cmdDatabase =new MySqlCommand("SELECT name, date, memo FROM sample_table.event ;", conDatabase);
+
+            try
+            {
+                MySqlDataAdapter sda = new MySqlDataAdapter();
+                sda.SelectCommand = cmdDatabase;
+                DataTable dbdataset = new DataTable();
+                sda.Fill(dbdataset);
+                BindingSource bSource = new BindingSource();
+
+                
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
