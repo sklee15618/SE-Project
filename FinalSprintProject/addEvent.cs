@@ -52,5 +52,10 @@ namespace FinalSprintProject
             // Form1 f1 = new Form1();
             //f1.ShowDialog();
         }
+
+        private void date_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

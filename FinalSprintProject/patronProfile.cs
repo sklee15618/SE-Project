@@ -93,7 +93,7 @@ namespace FinalSprintProject
         private void button1_Click_1(object sender, EventArgs e)
         {
             DBConnect c = new DBConnect();
-            c.PatronProfileInsert(this.ID.Text, this.FirstName.Text, this.LastName.Text, this.Gender.Text, this.Age.Text, this.PhoneNumber.Text, this.Email.Text, this.Address.Text, this.Suspended.Text, this.NeedRenewal.Text);
+           // c.PatronProfileInsert(this.ID.Text, this.FirstName.Text, this.LastName.Text, this.Gender.Text, this.Age.Text, this.PhoneNumber.Text, this.Email.Text, this.Address.Text, this.Suspended.Text, this.NeedRenewal.Text);
             MessageBox.Show("Information saved");
            // this.Hide();
            // Form1 f1 = new Form1();

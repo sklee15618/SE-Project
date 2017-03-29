@@ -24,6 +24,7 @@ namespace FinalSprintProject
 
         DataTable dbdataset;
         bool suspend;
+        bool warningSuspend;
 
         private void ReturntoMainMenuButton_Click(object sender, EventArgs e)
         {
@@ -111,34 +112,49 @@ namespace FinalSprintProject
 
         private void GenerateEmailButton_Click(object sender, EventArgs e)
         {
-            MailMessage mail = new MailMessage(From_txt.Text, to_txt.Text, Subject_txt.Text, body_txt.Text);
-            SmtpClient client = new SmtpClient(SmtpServer_txt.Text);
 
-            client.Port = 587;
-            client.Credentials = new System.Net.NetworkCredential(UserName_txt.Text, Password_txt.Text);
+            if(smtpServerCombo.Text == "smtp.office365.com" || smtpServerCombo.Text == "smtp.gmail.com" )
+            {
+                MailMessage mail = new MailMessage(From_txt.Text, to_txt.Text, Subject_txt.Text, body_txt.Text);
+                SmtpClient client = new SmtpClient(smtpServerCombo.Text);
 
-            client.EnableSsl = true;
-            client.Send(mail);
+                client.Port = 587;
+                client.Credentials = new System.Net.NetworkCredential(UserName_txt.Text, Password_txt.Text);
 
-            MessageBox.Show(" Mail Sent ! Success");
+                client.EnableSsl = true;
+                client.Send(mail);
+
+                MessageBox.Show(" Mail Sent ! Success");
+            }
+
+            else if(smtpServerCombo.Text == "smtp.mail.yahoo.com")
+            {
+                MailMessage mail = new MailMessage(From_txt.Text, to_txt.Text, Subject_txt.Text, body_txt.Text);
+                SmtpClient client = new SmtpClient(smtpServerCombo.Text);
+
+                client.Port = 465;
+                client.Credentials = new System.Net.NetworkCredential(UserName_txt.Text, Password_txt.Text);
+
+                client.EnableSsl = true;
+                client.Send(mail);
+
+                MessageBox.Show(" Mail Sent ! Success");
+            }
+           
         }
 
         private void PatronProfileView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+        {         
         }
 
         private void Password_txt_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void upadateButton_Click(object sender, EventArgs e)
         {
             DBConnect c = new DBConnect();
-
-            c.UpdateSuspension(suspend, SearchPatronID.Text);
-            
+            c.UpdateSuspension(suspend, SearchPatronID.Text);     
             MessageBox.Show("Information updated");
         }
 
@@ -150,6 +166,23 @@ namespace FinalSprintProject
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
             suspend = false;
+        }
+
+        private void updateWarningButton_Click(object sender, EventArgs e)
+        {
+            DBConnect c = new DBConnect();
+            c.UpdateWarningSuspension(warningSuspend, SearchPatronID.Text);
+            MessageBox.Show("Information updated");
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            warningSuspend = true;
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            warningSuspend = false;
         }
 
         private void SearchPatronID_KeyPress(object sender, KeyPressEventArgs e)
@@ -168,6 +201,16 @@ namespace FinalSprintProject
             {
                 e.Handled = true;
             }
+        }
+
+        private void to_txt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smtpServerCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

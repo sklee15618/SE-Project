@@ -47,12 +47,17 @@
             this.From_txt = new System.Windows.Forms.TextBox();
             this.to_txt = new System.Windows.Forms.TextBox();
             this.Subject_txt = new System.Windows.Forms.TextBox();
-            this.SmtpServer_txt = new System.Windows.Forms.TextBox();
             this.UserName_txt = new System.Windows.Forms.TextBox();
             this.Password_txt = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.updateButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.updateWarningButton = new System.Windows.Forms.Button();
+            this.smtpServerCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.PatronProfileView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +94,11 @@
             // 
             this.EmailLabel.AutoSize = true;
             this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLabel.Location = new System.Drawing.Point(834, 115);
+            this.EmailLabel.Location = new System.Drawing.Point(955, 115);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(56, 20);
+            this.EmailLabel.Size = new System.Drawing.Size(156, 20);
             this.EmailLabel.TabIndex = 3;
-            this.EmailLabel.Text = "Email";
+            this.EmailLabel.Text = "Email information";
             // 
             // SearchPatronID
             // 
@@ -106,7 +111,7 @@
             // 
             // body_txt
             // 
-            this.body_txt.Location = new System.Drawing.Point(896, 115);
+            this.body_txt.Location = new System.Drawing.Point(1146, 115);
             this.body_txt.Name = "body_txt";
             this.body_txt.Size = new System.Drawing.Size(351, 214);
             this.body_txt.TabIndex = 6;
@@ -115,7 +120,7 @@
             // GenerateEmailButton
             // 
             this.GenerateEmailButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenerateEmailButton.Location = new System.Drawing.Point(993, 471);
+            this.GenerateEmailButton.Location = new System.Drawing.Point(1106, 472);
             this.GenerateEmailButton.Name = "GenerateEmailButton";
             this.GenerateEmailButton.Size = new System.Drawing.Size(254, 42);
             this.GenerateEmailButton.TabIndex = 7;
@@ -159,7 +164,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(834, 20);
+            this.label1.Location = new System.Drawing.Point(1016, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 11;
@@ -169,7 +174,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(834, 50);
+            this.label2.Location = new System.Drawing.Point(1016, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 20);
             this.label2.TabIndex = 12;
@@ -180,7 +185,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(834, 81);
+            this.label3.Location = new System.Drawing.Point(1016, 83);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 13;
@@ -190,17 +195,17 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(834, 376);
+            this.label5.Location = new System.Drawing.Point(940, 378);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 20);
+            this.label5.Size = new System.Drawing.Size(244, 20);
             this.label5.TabIndex = 14;
-            this.label5.Text = "UserName";
+            this.label5.Text = "UserName (E-mail address)";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(834, 342);
+            this.label4.Location = new System.Drawing.Point(1071, 346);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(113, 20);
             this.label4.TabIndex = 15;
@@ -211,7 +216,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(834, 413);
+            this.label6.Location = new System.Drawing.Point(1093, 411);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 20);
             this.label6.TabIndex = 16;
@@ -219,7 +224,7 @@
             // 
             // From_txt
             // 
-            this.From_txt.Location = new System.Drawing.Point(993, 20);
+            this.From_txt.Location = new System.Drawing.Point(1146, 25);
             this.From_txt.Name = "From_txt";
             this.From_txt.Size = new System.Drawing.Size(238, 22);
             this.From_txt.TabIndex = 17;
@@ -227,35 +232,29 @@
             // 
             // to_txt
             // 
-            this.to_txt.Location = new System.Drawing.Point(993, 48);
+            this.to_txt.Location = new System.Drawing.Point(1146, 51);
             this.to_txt.Name = "to_txt";
             this.to_txt.Size = new System.Drawing.Size(238, 22);
             this.to_txt.TabIndex = 18;
+            this.to_txt.TextChanged += new System.EventHandler(this.to_txt_TextChanged);
             // 
             // Subject_txt
             // 
-            this.Subject_txt.Location = new System.Drawing.Point(993, 81);
+            this.Subject_txt.Location = new System.Drawing.Point(1146, 81);
             this.Subject_txt.Name = "Subject_txt";
             this.Subject_txt.Size = new System.Drawing.Size(238, 22);
             this.Subject_txt.TabIndex = 19;
             // 
-            // SmtpServer_txt
-            // 
-            this.SmtpServer_txt.Location = new System.Drawing.Point(1009, 342);
-            this.SmtpServer_txt.Name = "SmtpServer_txt";
-            this.SmtpServer_txt.Size = new System.Drawing.Size(238, 22);
-            this.SmtpServer_txt.TabIndex = 20;
-            // 
             // UserName_txt
             // 
-            this.UserName_txt.Location = new System.Drawing.Point(1009, 374);
+            this.UserName_txt.Location = new System.Drawing.Point(1259, 376);
             this.UserName_txt.Name = "UserName_txt";
             this.UserName_txt.Size = new System.Drawing.Size(238, 22);
             this.UserName_txt.TabIndex = 21;
             // 
             // Password_txt
             // 
-            this.Password_txt.Location = new System.Drawing.Point(1009, 411);
+            this.Password_txt.Location = new System.Drawing.Point(1259, 409);
             this.Password_txt.Name = "Password_txt";
             this.Password_txt.Size = new System.Drawing.Size(238, 22);
             this.Password_txt.TabIndex = 22;
@@ -265,7 +264,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(633, 179);
+            this.radioButton1.Location = new System.Drawing.Point(633, 383);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(120, 24);
             this.radioButton1.TabIndex = 23;
@@ -278,7 +277,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(633, 209);
+            this.radioButton2.Location = new System.Drawing.Point(633, 413);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(140, 24);
             this.radioButton2.TabIndex = 24;
@@ -290,7 +289,7 @@
             // updateButton
             // 
             this.updateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateButton.Location = new System.Drawing.Point(633, 259);
+            this.updateButton.Location = new System.Drawing.Point(633, 451);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(140, 43);
             this.updateButton.TabIndex = 25;
@@ -298,17 +297,93 @@
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.upadateButton_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(605, 342);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(168, 25);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "SUSPENSIONS";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(605, 156);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(270, 25);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "WARNINGSUSPENSIONS";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(633, 207);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(205, 24);
+            this.radioButton3.TabIndex = 28;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "warniningsuspension";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton4.Location = new System.Drawing.Point(633, 234);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(185, 24);
+            this.radioButton4.TabIndex = 29;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "unsuspendwarning";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // updateWarningButton
+            // 
+            this.updateWarningButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateWarningButton.Location = new System.Drawing.Point(633, 264);
+            this.updateWarningButton.Name = "updateWarningButton";
+            this.updateWarningButton.Size = new System.Drawing.Size(140, 43);
+            this.updateWarningButton.TabIndex = 30;
+            this.updateWarningButton.Text = "update";
+            this.updateWarningButton.UseVisualStyleBackColor = true;
+            this.updateWarningButton.Click += new System.EventHandler(this.updateWarningButton_Click);
+            // 
+            // smtpServerCombo
+            // 
+            this.smtpServerCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.smtpServerCombo.FormattingEnabled = true;
+            this.smtpServerCombo.Items.AddRange(new object[] {
+            "smtp.office365.com",
+            "smtp.gmail.com",
+            "smtp.mail.yahoo.com"});
+            this.smtpServerCombo.Location = new System.Drawing.Point(1259, 342);
+            this.smtpServerCombo.Name = "smtpServerCombo";
+            this.smtpServerCombo.Size = new System.Drawing.Size(238, 24);
+            this.smtpServerCombo.TabIndex = 31;
+            this.smtpServerCombo.SelectedIndexChanged += new System.EventHandler(this.smtpServerCombo_SelectedIndexChanged);
+            // 
             // suspensions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 568);
+            this.ClientSize = new System.Drawing.Size(1649, 541);
+            this.Controls.Add(this.smtpServerCombo);
+            this.Controls.Add(this.updateWarningButton);
+            this.Controls.Add(this.radioButton4);
+            this.Controls.Add(this.radioButton3);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.updateButton);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.Password_txt);
             this.Controls.Add(this.UserName_txt);
-            this.Controls.Add(this.SmtpServer_txt);
             this.Controls.Add(this.Subject_txt);
             this.Controls.Add(this.to_txt);
             this.Controls.Add(this.From_txt);
@@ -358,11 +433,16 @@
         private System.Windows.Forms.TextBox From_txt;
         private System.Windows.Forms.TextBox to_txt;
         private System.Windows.Forms.TextBox Subject_txt;
-        private System.Windows.Forms.TextBox SmtpServer_txt;
         private System.Windows.Forms.TextBox UserName_txt;
         private System.Windows.Forms.TextBox Password_txt;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.Button updateWarningButton;
+        private System.Windows.Forms.ComboBox smtpServerCombo;
     }
 }

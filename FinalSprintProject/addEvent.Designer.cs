@@ -121,6 +121,7 @@
             this.date.Name = "date";
             this.date.Size = new System.Drawing.Size(175, 22);
             this.date.TabIndex = 19;
+            this.date.ValueChanged += new System.EventHandler(this.date_ValueChanged);
             // 
             // addEvent
             // 

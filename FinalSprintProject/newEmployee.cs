@@ -53,7 +53,7 @@ namespace FinalSprintProject
         {
             DBConnect c = new DBConnect();
 
-            c.Insert_Employee(this.FirstName_txt.Text, this.LastName_txt.Text, this.dateTimePicker1.Text,
+            c.Insert_Employee( this.ID_txt.Text, this.password_txt.Text, this.FirstName_txt.Text, this.LastName_txt.Text, this.dateTimePicker1.Text,
                  this.Address_txt.Text, this.City_txt.Text, this.State_txt.Text, 
                  this.ZipCode_txt.Text, this.Phone_txt.Text, this.email.Text, this.Position_Combobox.Text
                  );
@@ -71,6 +71,15 @@ namespace FinalSprintProject
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ID_txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsDigit(ch) && ch != 8)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

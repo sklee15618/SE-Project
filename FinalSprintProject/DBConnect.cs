@@ -85,34 +85,64 @@ namespace FinalSprintProject
             }
         }
 
-        //Insert statement
-        public void Insert_Employee(string FirstName_txt, string LastName_txt, 
+        //Insert employee statement
+        public void Insert_Employee(string ID_txt, string password_txt, string FirstName_txt, string LastName_txt, 
             string dateTimePicker1, 
             string Address, string City_txt, string State_txt,
             string ZipCode_txt, string Phone_txt, string email, string Position_Combobox)
         {
 
-            string queryemp = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone,email, isEmployee, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '"+ email + "', '1', '0', '0')";
-            string querymanager = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone, email, isManager, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '1', '0', '0')";
-            string queryadmin = "INSERT INTO personal_info_table (firstname,lastname,birthday,address,city,state,zip,phone, email, isAdmin, warningSuspension, suspended) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '1', '0', '0')";
-            string query = "INSERT INTO emp_table (firstname,lastname,birthday,address,city,state,zip,phone,position) VALUES ( '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 +"', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','"+ Position_Combobox +"')";
+            string queryemp = "INSERT INTO personal_info_table (id, firstname,lastname,birthday,address,city,state,zip,phone,email, isPatron, isEmployee, isManager, isAdmin, warningSuspension, suspended) VALUES ('" + ID_txt + "','" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '"+ email + "', '0', '1', '0', '0', '0', '0')";
+            string querymanager = "INSERT INTO personal_info_table (id, firstname,lastname,birthday,address,city,state,zip,phone, email, isPatron, isEmployee, isManager, isAdmin, warningSuspension, suspended) VALUES ('" + ID_txt + "', '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '0', '0', '1', '0', '0', '0')";
+            string queryadmin = "INSERT INTO personal_info_table (id, firstname,lastname,birthday,address,city,state,zip,phone, email, isPatron, isEmployee, isManager, isAdmin, warningSuspension, suspended) VALUES ('" + ID_txt + "', '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '0', '0', '0', '1', '0', '0')";
+           // string query = "INSERT INTO personal_info_table (id, firstname,lastname,birthday,address,city,state,zip,phone,position) VALUES ('" + ID_txt + "', '" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 +"', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "','"+ Position_Combobox +"')";
 
             //VALUES()
 
             //open connection
             if (this.OpenConnection() == true)
             {
-                //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                if (Position_Combobox == "Employee")
+                {
+                    //create command and assign the query and connection from the constructor
+                    MySqlCommand cmd = new MySqlCommand(queryemp, connection);
 
-                //Execute command
-                cmd.ExecuteNonQuery();
+                    //Execute command
+                    cmd.ExecuteNonQuery();
 
-                //close connection
-               // this.CloseConnection();
+                    //close connection
+                    this.CloseConnection();
+                }
+
+                else if(Position_Combobox == "Manager")
+                {
+                    //create command and assign the query and connection from the constructor
+                    MySqlCommand cmd = new MySqlCommand(queryemp, connection);
+
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                    this.CloseConnection();
+                }
+
+                else if(Position_Combobox == "Administrator")
+                {
+                    //create command and assign the query and connection from the constructor
+                    MySqlCommand cmd = new MySqlCommand(queryadmin, connection);
+
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+
+                    //close connection
+                    this.CloseConnection();
+                }
+               
             }
         }
 
+
+        //updating the suspension
         public void UpdateSuspension(bool suspend, string SearchPatronID)
         {
             //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
@@ -136,10 +166,31 @@ namespace FinalSprintProject
             }
         }
 
-        //Paperless Waiver statement
+        // updating the warning suspenstion
+        public void UpdateWarningSuspension(bool warningSuspension, string SearchPatronID)
+        {
+            //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            string query = "UPDATE personal_info_table SET warningSuspension = " + warningSuspension + " where ID = '" + SearchPatronID + "' ";
 
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand();
+                //Assign the query using CommandText
+                cmd.CommandText = query;
+                //Assign the connection using Connection
+                cmd.Connection = connection;
 
+                //Execute query
+                cmd.ExecuteNonQuery();
 
+                //close connection
+                this.CloseConnection();
+            }
+        }
+
+        // adding event statements
             public void AddEvent(string date, string name, string memo)
         {
             string command = "INSERT INTO event (name,date,memo) VALUES('" + name + "','" + date + "','" + memo + "')";
@@ -175,6 +226,8 @@ namespace FinalSprintProject
 
         }
         */
+
+        //Paperless Waiver statement
         public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string currentTime, string TimeArr_txt, string TimeLeft_txt)
 
         //public void PaperlessWaiver(string PrintName_txt, string SignName_txt, string MemType_txt, string Gender_txt, string dateWaiver, string TimeArr_txt, string TimeLeft_txt)
