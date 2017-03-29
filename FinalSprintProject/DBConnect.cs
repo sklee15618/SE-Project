@@ -256,10 +256,10 @@ namespace FinalSprintProject
         // login statement
         public int Login(string id, string password)
         {
-            string query1 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isAdmin = 'TRUE' ";
-            string query2 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isManager = 'TRUE' ";
-            string query3 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isEmployee = 'TRUE' ";
-            string query4 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isPatron = 'TRUE' ";
+            string query1 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isAdmin = '1' ";
+            string query2 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isManager = '1' ";
+            string query3 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isEmployee = '1' ";
+            string query4 = "SELECT * FROM sample_table.personal_info_table WHERE ID = " + id + " AND password = " + password + " AND isPatron = '1' ";
 
             if (this.OpenConnection())
             {
@@ -350,16 +350,19 @@ namespace FinalSprintProject
         }
 
         //patron insert statement
-        public void PatronProfileInsert(string ID, string FirstName, string LastName, string Gender, string Age, string PhoneNumber, string Email, string Address, string Suspended, string NeedRenewal)
+        public void PatronProfileInsert(string ID_txt, string password_txt, string FirstName_txt, string LastName_txt,
+            string dateTimePicker1,
+            string Address, string City_txt, string State_txt,
+            string ZipCode_txt, string Phone_txt, string email)
         {
-            string command = "INSERT INTO patron_table (idpatron,FirstName,LastName,Gender,Age,phoneNumber,Email,Address,Suspended,needRenewal) VALUES ('" + ID + "','" + FirstName + "','" + LastName + "','" + Gender + "','" + Age + "','" + PhoneNumber + "', '" + Email + "', '" + Address + "', '" + Suspended + "', '" + NeedRenewal + "')";
+            string query = "INSERT INTO personal_info_table (id, firstname,lastname,birthday,address,city,state,zip,phone,email, isPatron, isEmployee, isManager, isAdmin, warningSuspension, suspended) VALUES ('" + ID_txt + "','" + FirstName_txt + "','" + LastName_txt + "','" + dateTimePicker1 + "', '" + Address + "', '" + City_txt + "', '" + State_txt + "', '" + ZipCode_txt + "', '" + Phone_txt + "', '" + email + "', '0', '1', '0', '0', '0', '0')";
             //VALUES()
 
             //open connection
             if (this.OpenConnection() == true)
             {
                 //create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(command, connection);
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
                 //Execute command
                 cmd.ExecuteNonQuery();

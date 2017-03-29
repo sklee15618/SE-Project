@@ -34,25 +34,27 @@
             this.ReturntoMainMenuButton = new System.Windows.Forms.Button();
             this.PatronProfileView = new System.Windows.Forms.DataGridView();
             this.loadtable_txt = new System.Windows.Forms.Button();
-            this.IDLabel = new System.Windows.Forms.Label();
-            this.AgeLabel = new System.Windows.Forms.Label();
-            this.GenderLabel = new System.Windows.Forms.Label();
-            this.LastNameLabel = new System.Windows.Forms.Label();
-            this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.PhoneNumberLabel = new System.Windows.Forms.Label();
-            this.AddressLabel = new System.Windows.Forms.Label();
-            this.EmailLabel = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.TextBox();
-            this.Address = new System.Windows.Forms.TextBox();
-            this.Email = new System.Windows.Forms.TextBox();
-            this.PhoneNumber = new System.Windows.Forms.TextBox();
-            this.Age = new System.Windows.Forms.TextBox();
-            this.Gender = new System.Windows.Forms.TextBox();
-            this.LastName = new System.Windows.Forms.TextBox();
-            this.FirstName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.FirstnameLabel = new System.Windows.Forms.Label();
+            this.LastnameLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.AddressLabel = new System.Windows.Forms.Label();
+            this.ZipcodeLabel = new System.Windows.Forms.Label();
+            this.PhoneLabel = new System.Windows.Forms.Label();
+            this.email_txt = new System.Windows.Forms.Label();
+            this.ID_txt = new System.Windows.Forms.TextBox();
+            this.password_txt = new System.Windows.Forms.TextBox();
+            this.Firstname_txt = new System.Windows.Forms.TextBox();
+            this.Lastname_txt = new System.Windows.Forms.TextBox();
+            this.Address_txt = new System.Windows.Forms.TextBox();
+            this.Phone_txt = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.email = new System.Windows.Forms.TextBox();
+            this.City_txt = new System.Windows.Forms.TextBox();
+            this.State_txt = new System.Windows.Forms.TextBox();
+            this.ZipCode_txt = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.PatronProfileView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +109,8 @@
             // 
             // loadtable_txt
             // 
-            this.loadtable_txt.Location = new System.Drawing.Point(1150, 514);
+            this.loadtable_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loadtable_txt.Location = new System.Drawing.Point(891, 514);
             this.loadtable_txt.Name = "loadtable_txt";
             this.loadtable_txt.Size = new System.Drawing.Size(171, 53);
             this.loadtable_txt.TabIndex = 7;
@@ -115,139 +118,10 @@
             this.loadtable_txt.UseVisualStyleBackColor = true;
             this.loadtable_txt.Click += new System.EventHandler(this.loadtable_txt_Click);
             // 
-            // IDLabel
-            // 
-            this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(38, 110);
-            this.IDLabel.Name = "IDLabel";
-            this.IDLabel.Size = new System.Drawing.Size(21, 17);
-            this.IDLabel.TabIndex = 8;
-            this.IDLabel.Text = "ID";
-            // 
-            // AgeLabel
-            // 
-            this.AgeLabel.AutoSize = true;
-            this.AgeLabel.Location = new System.Drawing.Point(38, 306);
-            this.AgeLabel.Name = "AgeLabel";
-            this.AgeLabel.Size = new System.Drawing.Size(33, 17);
-            this.AgeLabel.TabIndex = 10;
-            this.AgeLabel.Text = "Age";
-            // 
-            // GenderLabel
-            // 
-            this.GenderLabel.AutoSize = true;
-            this.GenderLabel.Location = new System.Drawing.Point(38, 261);
-            this.GenderLabel.Name = "GenderLabel";
-            this.GenderLabel.Size = new System.Drawing.Size(56, 17);
-            this.GenderLabel.TabIndex = 11;
-            this.GenderLabel.Text = "Gender";
-            // 
-            // LastNameLabel
-            // 
-            this.LastNameLabel.AutoSize = true;
-            this.LastNameLabel.Location = new System.Drawing.Point(38, 218);
-            this.LastNameLabel.Name = "LastNameLabel";
-            this.LastNameLabel.Size = new System.Drawing.Size(76, 17);
-            this.LastNameLabel.TabIndex = 12;
-            this.LastNameLabel.Text = "Last Name";
-            // 
-            // FirstNameLabel
-            // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(38, 176);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(76, 17);
-            this.FirstNameLabel.TabIndex = 13;
-            this.FirstNameLabel.Text = "First Name";
-            // 
-            // PhoneNumberLabel
-            // 
-            this.PhoneNumberLabel.AutoSize = true;
-            this.PhoneNumberLabel.Location = new System.Drawing.Point(38, 348);
-            this.PhoneNumberLabel.Name = "PhoneNumberLabel";
-            this.PhoneNumberLabel.Size = new System.Drawing.Size(103, 17);
-            this.PhoneNumberLabel.TabIndex = 14;
-            this.PhoneNumberLabel.Text = "Phone Number";
-            // 
-            // AddressLabel
-            // 
-            this.AddressLabel.AutoSize = true;
-            this.AddressLabel.Location = new System.Drawing.Point(38, 430);
-            this.AddressLabel.Name = "AddressLabel";
-            this.AddressLabel.Size = new System.Drawing.Size(60, 17);
-            this.AddressLabel.TabIndex = 15;
-            this.AddressLabel.Text = "Address";
-            this.AddressLabel.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // EmailLabel
-            // 
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(38, 389);
-            this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(42, 17);
-            this.EmailLabel.TabIndex = 16;
-            this.EmailLabel.Text = "Email";
-            // 
-            // ID
-            // 
-            this.ID.Location = new System.Drawing.Point(154, 110);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(246, 22);
-            this.ID.TabIndex = 19;
-            // 
-            // Address
-            // 
-            this.Address.Location = new System.Drawing.Point(154, 425);
-            this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(246, 22);
-            this.Address.TabIndex = 21;
-            // 
-            // Email
-            // 
-            this.Email.Location = new System.Drawing.Point(154, 384);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(246, 22);
-            this.Email.TabIndex = 22;
-            // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.Location = new System.Drawing.Point(154, 343);
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.Size = new System.Drawing.Size(246, 22);
-            this.PhoneNumber.TabIndex = 23;
-            // 
-            // Age
-            // 
-            this.Age.Location = new System.Drawing.Point(154, 301);
-            this.Age.Name = "Age";
-            this.Age.Size = new System.Drawing.Size(246, 22);
-            this.Age.TabIndex = 24;
-            // 
-            // Gender
-            // 
-            this.Gender.Location = new System.Drawing.Point(154, 261);
-            this.Gender.Name = "Gender";
-            this.Gender.Size = new System.Drawing.Size(246, 22);
-            this.Gender.TabIndex = 25;
-            // 
-            // LastName
-            // 
-            this.LastName.Location = new System.Drawing.Point(154, 218);
-            this.LastName.Name = "LastName";
-            this.LastName.Size = new System.Drawing.Size(246, 22);
-            this.LastName.TabIndex = 26;
-            // 
-            // FirstName
-            // 
-            this.FirstName.Location = new System.Drawing.Point(154, 176);
-            this.FirstName.Name = "FirstName";
-            this.FirstName.Size = new System.Drawing.Size(246, 22);
-            this.FirstName.TabIndex = 27;
-            this.FirstName.TextChanged += new System.EventHandler(this.textBox10_TextChanged);
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(31, 514);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(248, 454);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(119, 53);
             this.button1.TabIndex = 29;
@@ -258,43 +132,198 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 140);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(46, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 17);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "password";
+            this.label1.Size = new System.Drawing.Size(33, 25);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "ID";
             // 
-            // textBox2
+            // label2
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(246, 22);
-            this.textBox2.TabIndex = 31;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 140);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 25);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "password";
+            // 
+            // FirstnameLabel
+            // 
+            this.FirstnameLabel.AutoSize = true;
+            this.FirstnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstnameLabel.Location = new System.Drawing.Point(46, 171);
+            this.FirstnameLabel.Name = "FirstnameLabel";
+            this.FirstnameLabel.Size = new System.Drawing.Size(113, 25);
+            this.FirstnameLabel.TabIndex = 33;
+            this.FirstnameLabel.Text = "First name";
+            // 
+            // LastnameLabel
+            // 
+            this.LastnameLabel.AutoSize = true;
+            this.LastnameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastnameLabel.Location = new System.Drawing.Point(46, 203);
+            this.LastnameLabel.Name = "LastnameLabel";
+            this.LastnameLabel.Size = new System.Drawing.Size(112, 25);
+            this.LastnameLabel.TabIndex = 34;
+            this.LastnameLabel.Text = "Last name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(46, 239);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 25);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Birth date";
+            // 
+            // AddressLabel
+            // 
+            this.AddressLabel.AutoSize = true;
+            this.AddressLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddressLabel.Location = new System.Drawing.Point(47, 264);
+            this.AddressLabel.Name = "AddressLabel";
+            this.AddressLabel.Size = new System.Drawing.Size(87, 24);
+            this.AddressLabel.TabIndex = 36;
+            this.AddressLabel.Text = "Address";
+            // 
+            // ZipcodeLabel
+            // 
+            this.ZipcodeLabel.AutoSize = true;
+            this.ZipcodeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ZipcodeLabel.Location = new System.Drawing.Point(46, 301);
+            this.ZipcodeLabel.Name = "ZipcodeLabel";
+            this.ZipcodeLabel.Size = new System.Drawing.Size(155, 25);
+            this.ZipcodeLabel.TabIndex = 37;
+            this.ZipcodeLabel.Text = "City, State, Zip";
+            // 
+            // PhoneLabel
+            // 
+            this.PhoneLabel.AutoSize = true;
+            this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PhoneLabel.Location = new System.Drawing.Point(46, 336);
+            this.PhoneLabel.Name = "PhoneLabel";
+            this.PhoneLabel.Size = new System.Drawing.Size(74, 25);
+            this.PhoneLabel.TabIndex = 38;
+            this.PhoneLabel.Text = "Phone";
+            // 
+            // email_txt
+            // 
+            this.email_txt.AutoSize = true;
+            this.email_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_txt.Location = new System.Drawing.Point(46, 374);
+            this.email_txt.Name = "email_txt";
+            this.email_txt.Size = new System.Drawing.Size(73, 25);
+            this.email_txt.TabIndex = 39;
+            this.email_txt.Text = "E-mail";
+            // 
+            // ID_txt
+            // 
+            this.ID_txt.Location = new System.Drawing.Point(248, 100);
+            this.ID_txt.Name = "ID_txt";
+            this.ID_txt.Size = new System.Drawing.Size(297, 22);
+            this.ID_txt.TabIndex = 40;
+            // 
+            // password_txt
+            // 
+            this.password_txt.Location = new System.Drawing.Point(248, 140);
+            this.password_txt.Name = "password_txt";
+            this.password_txt.Size = new System.Drawing.Size(297, 22);
+            this.password_txt.TabIndex = 41;
+            // 
+            // Firstname_txt
+            // 
+            this.Firstname_txt.Location = new System.Drawing.Point(248, 174);
+            this.Firstname_txt.Name = "Firstname_txt";
+            this.Firstname_txt.Size = new System.Drawing.Size(297, 22);
+            this.Firstname_txt.TabIndex = 42;
+            // 
+            // Lastname_txt
+            // 
+            this.Lastname_txt.Location = new System.Drawing.Point(248, 207);
+            this.Lastname_txt.Name = "Lastname_txt";
+            this.Lastname_txt.Size = new System.Drawing.Size(297, 22);
+            this.Lastname_txt.TabIndex = 43;
+            // 
+            // Address_txt
+            // 
+            this.Address_txt.Location = new System.Drawing.Point(248, 264);
+            this.Address_txt.Name = "Address_txt";
+            this.Address_txt.Size = new System.Drawing.Size(297, 22);
+            this.Address_txt.TabIndex = 44;
+            // 
+            // Phone_txt
+            // 
+            this.Phone_txt.Location = new System.Drawing.Point(248, 340);
+            this.Phone_txt.Name = "Phone_txt";
+            this.Phone_txt.Size = new System.Drawing.Size(297, 22);
+            this.Phone_txt.TabIndex = 47;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(248, 235);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(293, 22);
+            this.dateTimePicker1.TabIndex = 48;
+            // 
+            // email
+            // 
+            this.email.Location = new System.Drawing.Point(248, 378);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(297, 22);
+            this.email.TabIndex = 49;
+            // 
+            // City_txt
+            // 
+            this.City_txt.Location = new System.Drawing.Point(248, 301);
+            this.City_txt.Name = "City_txt";
+            this.City_txt.Size = new System.Drawing.Size(110, 22);
+            this.City_txt.TabIndex = 50;
+            // 
+            // State_txt
+            // 
+            this.State_txt.Location = new System.Drawing.Point(364, 301);
+            this.State_txt.Name = "State_txt";
+            this.State_txt.Size = new System.Drawing.Size(51, 22);
+            this.State_txt.TabIndex = 51;
+            // 
+            // ZipCode_txt
+            // 
+            this.ZipCode_txt.Location = new System.Drawing.Point(421, 301);
+            this.ZipCode_txt.Name = "ZipCode_txt";
+            this.ZipCode_txt.Size = new System.Drawing.Size(100, 22);
+            this.ZipCode_txt.TabIndex = 52;
             // 
             // patronProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1481, 733);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ZipCode_txt);
+            this.Controls.Add(this.State_txt);
+            this.Controls.Add(this.City_txt);
+            this.Controls.Add(this.email);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.Phone_txt);
+            this.Controls.Add(this.Address_txt);
+            this.Controls.Add(this.Lastname_txt);
+            this.Controls.Add(this.Firstname_txt);
+            this.Controls.Add(this.password_txt);
+            this.Controls.Add(this.ID_txt);
+            this.Controls.Add(this.email_txt);
+            this.Controls.Add(this.PhoneLabel);
+            this.Controls.Add(this.ZipcodeLabel);
+            this.Controls.Add(this.AddressLabel);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.LastnameLabel);
+            this.Controls.Add(this.FirstnameLabel);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.FirstName);
-            this.Controls.Add(this.LastName);
-            this.Controls.Add(this.Gender);
-            this.Controls.Add(this.Age);
-            this.Controls.Add(this.PhoneNumber);
-            this.Controls.Add(this.Email);
-            this.Controls.Add(this.Address);
-            this.Controls.Add(this.ID);
-            this.Controls.Add(this.EmailLabel);
-            this.Controls.Add(this.AddressLabel);
-            this.Controls.Add(this.PhoneNumberLabel);
-            this.Controls.Add(this.FirstNameLabel);
-            this.Controls.Add(this.LastNameLabel);
-            this.Controls.Add(this.GenderLabel);
-            this.Controls.Add(this.AgeLabel);
-            this.Controls.Add(this.IDLabel);
             this.Controls.Add(this.loadtable_txt);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.inputIDLabel);
@@ -318,24 +347,26 @@
         private System.Windows.Forms.Button ReturntoMainMenuButton;
         private System.Windows.Forms.DataGridView PatronProfileView;
         private System.Windows.Forms.Button loadtable_txt;
-        private System.Windows.Forms.Label IDLabel;
-        private System.Windows.Forms.Label AgeLabel;
-        private System.Windows.Forms.Label GenderLabel;
-        private System.Windows.Forms.Label LastNameLabel;
-        private System.Windows.Forms.Label FirstNameLabel;
-        private System.Windows.Forms.Label PhoneNumberLabel;
-        private System.Windows.Forms.Label AddressLabel;
-        private System.Windows.Forms.Label EmailLabel;
-        private System.Windows.Forms.TextBox ID;
-        private System.Windows.Forms.TextBox Address;
-        private System.Windows.Forms.TextBox Email;
-        private System.Windows.Forms.TextBox PhoneNumber;
-        private System.Windows.Forms.TextBox Age;
-        private System.Windows.Forms.TextBox Gender;
-        private System.Windows.Forms.TextBox LastName;
-        private System.Windows.Forms.TextBox FirstName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label FirstnameLabel;
+        private System.Windows.Forms.Label LastnameLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label AddressLabel;
+        private System.Windows.Forms.Label ZipcodeLabel;
+        private System.Windows.Forms.Label PhoneLabel;
+        private System.Windows.Forms.Label email_txt;
+        private System.Windows.Forms.TextBox ID_txt;
+        private System.Windows.Forms.TextBox password_txt;
+        private System.Windows.Forms.TextBox Firstname_txt;
+        private System.Windows.Forms.TextBox Lastname_txt;
+        private System.Windows.Forms.TextBox Address_txt;
+        private System.Windows.Forms.TextBox Phone_txt;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox City_txt;
+        private System.Windows.Forms.TextBox State_txt;
+        private System.Windows.Forms.TextBox ZipCode_txt;
     }
 }
