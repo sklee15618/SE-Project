@@ -204,6 +204,7 @@
             this.searchEventName.Name = "searchEventName";
             this.searchEventName.Size = new System.Drawing.Size(147, 21);
             this.searchEventName.TabIndex = 27;
+            this.searchEventName.TextChanged += new System.EventHandler(this.searchEventName_TextChanged);
             // 
             // addEventName
             // 
@@ -224,11 +225,11 @@
             // 
             // loadDataBtn
             // 
-            this.loadDataBtn.Location = new System.Drawing.Point(552, 58);
+            this.loadDataBtn.Location = new System.Drawing.Point(274, 301);
             this.loadDataBtn.Name = "loadDataBtn";
             this.loadDataBtn.Size = new System.Drawing.Size(122, 46);
             this.loadDataBtn.TabIndex = 30;
-            this.loadDataBtn.Text = "Load data";
+            this.loadDataBtn.Text = "Refresh results";
             this.loadDataBtn.UseVisualStyleBackColor = true;
             this.loadDataBtn.Click += new System.EventHandler(this.loadDataBtn_Click);
             // 
