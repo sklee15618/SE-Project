@@ -7,29 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace FinalSprintProject
 {
     public partial class generateReports : Form
     {
+
         public generateReports()
         {
             InitializeComponent();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void ReturntoMainMenuButton_Click(object sender, EventArgs e)
@@ -39,9 +27,6 @@ namespace FinalSprintProject
             f1.ShowDialog();
         }
 
-        private void ReportsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+    
     }
 }
