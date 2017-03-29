@@ -35,20 +35,21 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.button1 = new System.Windows.Forms.Button();
             this.dataTxt = new System.Windows.Forms.Label();
-            this.eventTxtBox = new System.Windows.Forms.RichTextBox();
+            this.memo = new System.Windows.Forms.RichTextBox();
             this.eventsDataGrid = new System.Windows.Forms.DataGridView();
             this.addEvents = new System.Windows.Forms.Label();
             this.eventTxt = new System.Windows.Forms.Label();
             this.saveButton = new System.Windows.Forms.Button();
-            this.eventDate = new System.Windows.Forms.DateTimePicker();
-            this.updateButton = new System.Windows.Forms.Button();
+            this.date = new System.Windows.Forms.DateTimePicker();
+            this.editButton = new System.Windows.Forms.Button();
             this.searchEvenDate = new System.Windows.Forms.Label();
             this.searchEventDate = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.searchEventName = new System.Windows.Forms.TextBox();
             this.addEventName = new System.Windows.Forms.Label();
-            this.searchEventNameBox = new System.Windows.Forms.TextBox();
+            this.name = new System.Windows.Forms.TextBox();
             this.loadDataBtn = new System.Windows.Forms.Button();
+            this.deleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventsDataGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,14 +101,14 @@
             this.dataTxt.TabIndex = 9;
             this.dataTxt.Text = "Event Date";
             // 
-            // eventTxtBox
+            // memo
             // 
-            this.eventTxtBox.Location = new System.Drawing.Point(807, 117);
-            this.eventTxtBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.eventTxtBox.Name = "eventTxtBox";
-            this.eventTxtBox.Size = new System.Drawing.Size(226, 131);
-            this.eventTxtBox.TabIndex = 10;
-            this.eventTxtBox.Text = "";
+            this.memo.Location = new System.Drawing.Point(807, 117);
+            this.memo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.memo.Name = "memo";
+            this.memo.Size = new System.Drawing.Size(226, 131);
+            this.memo.TabIndex = 10;
+            this.memo.Text = "";
             // 
             // eventsDataGrid
             // 
@@ -118,6 +119,7 @@
             this.eventsDataGrid.RowTemplate.Height = 24;
             this.eventsDataGrid.Size = new System.Drawing.Size(418, 155);
             this.eventsDataGrid.TabIndex = 11;
+            this.eventsDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.eventsDataGrid_CellContentClick);
             // 
             // addEvents
             // 
@@ -147,25 +149,27 @@
             this.saveButton.TabIndex = 19;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // eventDate
+            // date
             // 
-            this.eventDate.CustomFormat = "yyyy-MM-dd";
-            this.eventDate.Location = new System.Drawing.Point(807, 83);
-            this.eventDate.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.eventDate.Name = "eventDate";
-            this.eventDate.Size = new System.Drawing.Size(218, 21);
-            this.eventDate.TabIndex = 20;
+            this.date.CustomFormat = "yyyy-MM-dd";
+            this.date.Location = new System.Drawing.Point(807, 83);
+            this.date.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(218, 21);
+            this.date.TabIndex = 20;
             // 
-            // updateButton
+            // editButton
             // 
-            this.updateButton.Location = new System.Drawing.Point(934, 261);
-            this.updateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(113, 24);
-            this.updateButton.TabIndex = 21;
-            this.updateButton.Text = "Update";
-            this.updateButton.UseVisualStyleBackColor = true;
+            this.editButton.Location = new System.Drawing.Point(934, 261);
+            this.editButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(113, 24);
+            this.editButton.TabIndex = 21;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // searchEvenDate
             // 
@@ -210,13 +214,13 @@
             this.addEventName.TabIndex = 28;
             this.addEventName.Text = "Event Name";
             // 
-            // searchEventNameBox
+            // name
             // 
-            this.searchEventNameBox.Location = new System.Drawing.Point(807, 57);
-            this.searchEventNameBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.searchEventNameBox.Name = "searchEventNameBox";
-            this.searchEventNameBox.Size = new System.Drawing.Size(218, 21);
-            this.searchEventNameBox.TabIndex = 29;
+            this.name.Location = new System.Drawing.Point(807, 57);
+            this.name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.name.Name = "name";
+            this.name.Size = new System.Drawing.Size(218, 21);
+            this.name.TabIndex = 29;
             // 
             // loadDataBtn
             // 
@@ -228,25 +232,36 @@
             this.loadDataBtn.UseVisualStyleBackColor = true;
             this.loadDataBtn.Click += new System.EventHandler(this.loadDataBtn_Click);
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(789, 313);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(113, 23);
+            this.deleteBtn.TabIndex = 31;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // calendarNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 393);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.loadDataBtn);
-            this.Controls.Add(this.searchEventNameBox);
+            this.Controls.Add(this.name);
             this.Controls.Add(this.addEventName);
             this.Controls.Add(this.searchEventName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchEventDate);
             this.Controls.Add(this.searchEvenDate);
-            this.Controls.Add(this.updateButton);
-            this.Controls.Add(this.eventDate);
+            this.Controls.Add(this.editButton);
+            this.Controls.Add(this.date);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.eventTxt);
             this.Controls.Add(this.addEvents);
             this.Controls.Add(this.eventsDataGrid);
-            this.Controls.Add(this.eventTxtBox);
+            this.Controls.Add(this.memo);
             this.Controls.Add(this.dataTxt);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.monthCalendar1);
@@ -269,19 +284,20 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label dataTxt;
-        private System.Windows.Forms.RichTextBox eventTxtBox;
+        private System.Windows.Forms.RichTextBox memo;
         private System.Windows.Forms.DataGridView eventsDataGrid;
         private System.Windows.Forms.Label addEvents;
         private System.Windows.Forms.Label eventTxt;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.DateTimePicker eventDate;
-        private System.Windows.Forms.Button updateButton;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Label searchEvenDate;
         private System.Windows.Forms.TextBox searchEventDate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox searchEventName;
         private System.Windows.Forms.Label addEventName;
-        private System.Windows.Forms.TextBox searchEventNameBox;
+        private System.Windows.Forms.TextBox name;
         private System.Windows.Forms.Button loadDataBtn;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }
